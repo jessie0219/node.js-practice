@@ -42,7 +42,7 @@ app.use(connectFlash());
 app.use(csrfProtection());
 
 app.use((req, res, next) => {
-    res.locals.pageTitle = 'Book Your Books online';
+    res.locals.pageTitle = 'ECHO Shop';
     res.locals.path = req.url;
     res.locals.isLogin = req.session.isLogin || false;
     res.locals.csrfToken = req.csrfToken();
@@ -62,7 +62,7 @@ database
     // .sync()
 	.sync({ force: true }) // 和 db 連線職，強制重設 db
 	.then((result) => {
-        // Product.bulkCreate(products);
+        Product.bulkCreate(products);
 		app.listen(port, () => {
 			console.log(`Web Server is running on port ${port}`);
 		});
@@ -71,23 +71,41 @@ database
 		console.log('create web server error: ', err);
 	});
 
-const products = [
-    {
-        title: '四月是你的謊言 1',
-        price: 80,
-        description: '有馬公生的母親一心想把有馬培育成舉世聞名的鋼琴家，而有馬也不負母親的期望，在唸小學時就贏得許多鋼琴比賽的大獎。11歲的秋天，有馬的母親過世，從此他再也聽不見自己彈奏的鋼琴聲，沮喪的他也只好放棄演奏，但在14歲那年，經由兒時玩伴的介紹，有馬認識了小提琴手宮園薰，並被薰的自由奔放吸引，沒想到薰竟開口邀請公生在比賽時擔任她的伴奏…',
-        imageUrl: 'https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/062/25/0010622563.jpg&v=52dcfd21&w=348&h=348'
-    },
-    {
-        title: '四月是你的謊言 2',
-        price: 80,
-        description: '公生答應在二次預賽中擔任小薰的鋼琴伴奏。比賽一開始公生還能順利彈琴，但在中途又再次因為聽不見鋼琴的聲音而停手。沒想到小薰也跟著停止演奏、等候公生。原本心灰意冷的公生因此重新振作，與小薰合奏出驚人的樂章…......',
-        imageUrl: 'https://im1.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/062/31/0010623172.jpg&v=52dcfd21&w=348&h=348'
-    },
-    {
-        title: '四月是你的謊言 3',
-        price: 80,
-        description: '在小薰的逼迫之下，公生不得不參加音樂比賽。為了參加比賽，公生從早到晚不停的練習，但就是無法彈奏出屬於自己的巴哈與蕭邦。此時，公生的面前出現兩位強勁的對手-相座武士與井川繪見，他們曾經是公生的手下敗將，一心想在比賽中擊敗公生雪恥。先上台演奏的武士彈奏出令全場喝采的激昂樂章…',
-        imageUrl: 'https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/062/76/0010627615.jpg&v=5315ab5f&w=348&h=348'
-    },
-];
+    const products = [
+        {
+            title: 'Rick And Morty  / 檯燈',
+            price: 1900,
+            description: '帥的單品不需要多介紹，男朋友一直吵就是因為你沒買，妹子趕快來密我',
+            imageUrl: 'https://cf.shopee.tw/file/0aed1fc0dc776365707909b94f8acf11'
+        },
+        {
+            title: 'Rick and Morty / 爺爺的小酒壺',
+            price: 1280,
+            description: '口頭禪寫在上面還不買一個嗎？“Wubba Lubba Dub Dub!”',
+            imageUrl: 'https://img.alicdn.com/imgextra/i2/2680007033/O1CN01tVSIuA21pA70IixSY_!!2680007033.jpg'
+        },
+        {
+            title: 'Happi class 漢堡椅',
+            price: 9500,
+            description: '1/6 BUR-CHAIR!當初真的可以坐的漢堡椅不再產了，於是來自香港的HAPPI CLASS用1/6的微縮比例讓大家還是可以擁有他！看看盒子也好好看～是快餐造型🤣',
+            imageUrl: 'https://img.ruten.com.tw/s2/2/da/50/22136037887568_318.png '
+        },
+        {
+            title: 'Rick And Morty  / 檯燈',
+            price: 1900,
+            description: '帥的單品不需要多介紹，男朋友一直吵就是因為你沒買，妹子趕快來密我',
+            imageUrl: 'https://cf.shopee.tw/file/0aed1fc0dc776365707909b94f8acf11'
+        },
+        {
+            title: 'Rick and Morty / 爺爺的小酒壺',
+            price: 1280,
+            description: '口頭禪寫在上面還不買一個嗎？“Wubba Lubba Dub Dub!”',
+            imageUrl: 'https://img.alicdn.com/imgextra/i2/2680007033/O1CN01tVSIuA21pA70IixSY_!!2680007033.jpg'
+        },
+        {
+            title: 'Happi class 漢堡椅',
+            price: 9500,
+            description: '1/6 BUR-CHAIR!當初真的可以坐的漢堡椅不再產了，於是來自香港的HAPPI CLASS用1/6的微縮比例讓大家還是可以擁有他！看看盒子也好好看～是快餐造型🤣',
+            imageUrl: 'https://img.ruten.com.tw/s2/2/da/50/22136037887568_318.png '
+        }
+    ];
